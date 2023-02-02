@@ -1,16 +1,10 @@
 {
   "products": [
     {
-      "name": "asdf",
+      "name": "test",
       "count": 2,
       "short_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "id": 10
-    },
-    {
-      "name": "1",
-      "count": 1,
-      "short_description": "1",
-      "id": 13
     }
   ]
 }

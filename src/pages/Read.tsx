@@ -1,11 +1,13 @@
-import { Delete } from "@mui/icons-material";
+import { Delete, Edit } from "@mui/icons-material";
 import { Card, IconButton } from "@mui/material";
 import axios from "axios";
 import React from "react";
 import IProduct from "../IProduct";
+import { useNavigate } from "react-router-dom";
 
 const Read = (): JSX.Element => {
   const [products, setProducts] = React.useState<IProduct[]>([]);
+  const navigate = useNavigate();
 
   const getData = async () => {
     const { data } = await axios.get<IProduct[]>(
@@ -37,7 +39,10 @@ const Read = (): JSX.Element => {
                   <p className="">{product.short_description}</p>
                 </li>
               </div>
-              <li className="flex justify-around items-center p-4 m-4">
+              <li className="flex justify-between items-center p-2 m-4">
+                <IconButton onClick={() => navigate(`/update/${product.id}`)}>
+                  <Edit color="primary" />
+                </IconButton>
                 <div>{product.count} count</div>
                 <IconButton onClick={() => handleDelete(product.id)}>
                   <Delete color="error" />
