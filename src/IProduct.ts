@@ -1,4 +1,4 @@
-export interface IProductCreate {
+export interface IProductForm {
   name: string;
   count: number | null;
   short_description: string;
