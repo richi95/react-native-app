@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "name": "test",
+      "count": 10,
+      "short_description": "description",
+      "id": 1
+    }
+  ]
+}
