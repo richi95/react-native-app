@@ -1,4 +1,4 @@
-# React webshop CRUD applikáció,
+# React webshop CRUD applikáció
 
 **Futtasd a következő parancsokat**
 
