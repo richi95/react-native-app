@@ -1,7 +1,7 @@
 import { TextField, Button, CircularProgress } from "@mui/material";
 import axios from "axios";
 import React, { FormEventHandler } from "react";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { IProductForm } from "../IProduct";
 
 interface IProps {
@@ -9,7 +9,6 @@ interface IProps {
 }
 
 const Create = ({ update }: IProps) => {
-  const { userRole: roleFromRoute } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = React.useState(true);
@@ -19,8 +18,6 @@ const Create = ({ update }: IProps) => {
     short_description: "",
   });
   const id = location.pathname.split("/");
-
-  console.log(form);
 
   const getData = async () => {
     const { data } = await axios.get<IProductForm>(
@@ -45,7 +42,6 @@ const Create = ({ update }: IProps) => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const formFiltered = Object.values(form).filter((v) => v);
-    console.log(formFiltered);
     if (Object.keys(form).length === formFiltered.length) {
       update
         ? axios.put(`http://localhost:3500/products/${id[2]}`, form)
