@@ -1,6 +1,6 @@
-# React webshop CRUD applikáció,
+# React webshop CRUD applikáció
 
-**Futtasd a következő parancsokat**
+**Futtassa a következő parancsokat**
 
 ### `git clone https://github.com/richi95/react-webshop-crud-app.git`
 
